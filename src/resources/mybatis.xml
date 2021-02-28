@@ -24,9 +24,10 @@
 
 
 
-    <!--<settings>-->
-        <!--<setting name="logImpl" value="LOG4J"/>-->
-    <!--</settings>-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <setting name="defaultStatementTimeout" value="1000"/>
+    </settings>
 
     <!--<objectFactory type="com" >-->
         <!--<property name="" value=""></property>-->

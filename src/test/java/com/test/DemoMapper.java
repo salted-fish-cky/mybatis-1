@@ -17,22 +17,20 @@ package com.test;
 
 import java.util.List;
 import java.util.Map;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * 需要视频资料或者咨询课程的可以加若曦老师的QQ：2408349392
- * author：鲁班学院-商鞅老师
- */
+
 //@Alias("DemoMapper")
 public interface DemoMapper {
 
 //    @Select()
   // arg0 arg1 arg2
-  public List<Map<String,Object>>  selectAll(String id, String name);
+  List<TestResultMap>  selectAll(String id, String name, String column);
 
-  public void insert(String name,String age);
+  void insert(@Param("test") TestResultMap test);
 
-  default void test(){
-    System.out.println(111);
+  void update(@Param("id") Integer id, @Param("age") Integer age);
 
-  }
+  List<Map<String, Object>> selectByCondition(@Param("name") String name);
+
 }
